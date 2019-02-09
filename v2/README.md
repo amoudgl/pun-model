@@ -3,8 +3,8 @@ Pun model `v2`
 
 This is the final version of the pun model and it is built on top of [`v1`](../v1). Following are the updates from [`v1`](../v1):
 
-- Relatedness and unigram data are cleaned and saved in a new format. All the cleanup scripts can be found in [`v2/cleanup`](./v2/cleanup) directory.
-- New data model class is written in [`v2/src/models.py`](./v2/src/models.py) which parses the cleaned data.
+- Relatedness and unigram data are cleaned and saved in a new format. All the cleanup scripts can be found in [`v2/cleanup`](./cleanup) directory.
+- New data model class is written in [`v2/src/models.py`](./src/models.py) which parses the cleaned data.
 - Fixes implementation bugs in [`v0`](../v0).
 - Due to data cleanup, this model doesn't exactly reproduce ambiguity and distinctiveness values for sentences in puns dataset. However, with some hyperparamter tuning, I get slightly better results (R-squared value in linear regression analysis) than the author's implementation.
 
@@ -19,13 +19,13 @@ This is the final version of the pun model and it is built on top of [`v1`](../v
 
 **Unigram data**
 
-- Author's implementation uses two unigram data files: [`homophones_unigram_identical.csv`](../v0/data/homophones_unigram_identical.csv), [`homophones_unigram_near.csv`](../v0/data/homophones_unigram_near.csv). I found out that the data is not consistent for some words i.e. if the same word appears in these two files, its unigram frequencies in these two files are different.
+- Author's implementation uses two unigram data files: [`homophones_unigram_identical.csv`](../v0/ProcessedData/homophones_unigram_identical.csv), [`homophones_unigram_near.csv`](../v0/ProcessedData/homophones_unigram_near.csv). I found out that the data is not consistent for some words i.e. if the same word appears in these two files, its unigram frequencies in these two files are different.
 - All such words with multiple unigram frequencies can be found in this [cleanup log](./cleanup/clean_unigram_data.log).
 - Following the same strategy as the above relatedness data section, I picked one unigram value for words with multiple unigram frequencies. View [unigram cleanup script](./cleanup/clean_unigram_data.py) for more details.
 
 **Implementation bugs**
 
-- [Bug 1](v0/ModelScripts/computeMeasures.py#L238-L240): These three lines in author's implementation should be indented, i.e. they should be inside the for loop. Basically, these three lines sum `P(m,f | w)` for each focus vector `f` and a meaning word `m`. Hence, it should be inside the loop which iterates over all the focus vectors.
+- [Bug 1](v0/ModelScripts/computeMeasures.py#L238-L240): These three lines L238-L240 in author's implementation `v0/ModelScripts/computeMeasures.py` should be indented, i.e. they should be inside the for loop. Basically, these three lines sum `P(m,f | w)` for each focus vector `f` and a meaning word `m`. Hence, it should be inside the loop which iterates over all the focus vectors.
 - [Bug 2](v0/ModelScripts/computeMeasures.py#L52-L56): Each row in author's unigram data contains two meanings (`m1` and `m2`) and their unigram frequencies. In author's implementation, two dictionaries namely, `m1ProbDict` and `m2ProbDict` are constructed to parse this data but the key to *both* dictionaries is `m1`. This causes an issue when there are pairs with the same `m1` but different `m2`. Example of such pairs from the dataset: [`traumatic`, `dramatic`]; [`traumatic`, `grammatic`].
 
 
