@@ -25,8 +25,8 @@ This is the final version of the pun model and it is built on top of [`v1`](../v
 
 **Implementation bugs**
 
-- [Bug 1](v0/ModelScripts/computeMeasures.py#L238-L240): These three lines L238-L240 in author's implementation `v0/ModelScripts/computeMeasures.py` should be indented, i.e. they should be inside the for loop. Basically, these three lines sum `P(m,f | w)` for each focus vector `f` and a meaning word `m`. Hence, it should be inside the loop which iterates over all the focus vectors.
-- [Bug 2](v0/ModelScripts/computeMeasures.py#L52-L56): Each row in author's unigram data contains two meanings (`m1` and `m2`) and their unigram frequencies. In author's implementation, two dictionaries namely, `m1ProbDict` and `m2ProbDict` are constructed to parse this data but the key to *both* dictionaries is `m1`. This causes an issue when there are pairs with the same `m1` but different `m2`. Example of such pairs from the dataset: [`traumatic`, `dramatic`]; [`traumatic`, `grammatic`].
+- [Bug 1](../v0/ModelScripts/computeMeasures.py#L238-L240): These three lines L238-L240 in author's implementation `v0/ModelScripts/computeMeasures.py` should be indented, i.e. they should be inside the for loop. Basically, these three lines sum `P(m,f | w)` for each focus vector `f` and a meaning word `m`. Hence, it should be inside the loop which iterates over all the focus vectors.
+- [Bug 2](../v0/ModelScripts/computeMeasures.py#L52-L56): Each row in author's unigram data contains two meanings (`m1` and `m2`) and their unigram frequencies. In author's implementation, two dictionaries namely, `m1ProbDict` and `m2ProbDict` are constructed to parse this data but the key to *both* dictionaries is `m1`. This causes an issue when there are pairs with the same `m1` but different `m2`. Example of such pairs from the dataset: [`traumatic`, `dramatic`]; [`traumatic`, `grammatic`].
 
 
 ## Data
