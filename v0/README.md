@@ -12,10 +12,10 @@ I cloned the author's original repository `justinek/pun-paper`, cleaned it up an
 ## Data
 
 `v0` uses the following data files (all present in `v0/ProcessedData/`):
-- [`wordPair_relatedness_smoothedTrigrams_identical.csv`](./ProcessedData/wordPair_relatedness_smoothedTrigrams_identical.csv`): Contains relatedness and trigram data for all the "identical" puntype sentences.
-- [`wordPair_relatedness_smoothedTrigrams_near.csv`](./ProcessedData/wordPair_relatedness_smoothedTrigrams_near.csv):  Contains relatedness and trigram data for all the "near" puntype sentences.
-- [`homophones_unigram_identical.csv`](./ProcessedData/homophones_unigram_identical.csv): Contains unigram frequency of the two meanings for each "identical" puntype sentence in dataset.
-- [`homophones_unigram_near.csv`](./ProcessedData/homophones_unigram_near.csv): Contains unigram frequency of the two meanings for each "near" puntype sentence in dataset.
+- `wordPair_relatedness_smoothedTrigrams_identical.csv`: Contains relatedness and trigram data for all the "identical" puntype sentences.
+- `wordPair_relatedness_smoothedTrigrams_near.csv`:  Contains relatedness and trigram data for all the "near" puntype sentences.
+- `homophones_unigram_identical.csv`: Contains unigram frequency of the two meanings for each "identical" puntype sentence in dataset.
+- `homophones_unigram_near.csv`: Contains unigram frequency of the two meanings for each "near" puntype sentence in dataset.
 - [`data-agg.csv`](../data/data-agg.csv) (puns dataset): Contains 435 sentences (145 puns + 290 nonpuns) along with groundtruth funniness ratings, two meanings [`m1`, `m2`] (think of them as two possible interpretations) for each pun/nonpun, ambiguity and distinctiveness computed by model, focus words for each meaning etc.
 
 Since, I'm mainly interested in reproducing ambiguity and distinctiveness measures for each sentence in the puns dataset, I extracted them from `data-agg.csv` and generated a [`pun-model/data/data-agg-measures.csv`](../data/data-agg-measures.csv) containing 5 columns as described below:
