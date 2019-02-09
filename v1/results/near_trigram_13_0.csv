@@ -1,0 +1,2 @@
+punType,sentenceID,sentenceType,sum_m1_ngram,sum_m2_ngram,sum_m1_relatedness,sum_m2_relatedness,p_m1_given_w,p_m2_given_w,entropy,m1KL,m2KL,KL,m1Focus,m2Focus
+near,1,pun,-55.535657869,-46.7526460314,10.997211058,-1.861346626,0.747718940088,0.252281059912,0.564827297763,1.30117532854,6.47901498186,7.78019031041,lion;circus,driver

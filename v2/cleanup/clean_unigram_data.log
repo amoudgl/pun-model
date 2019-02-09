@@ -1,0 +1,6 @@
+multiple unigram values found for word heir: [7.75e-06, 2.24e-06]
+multiple unigram values found for word hair: [0.000109799, 9.98e-05]
+multiple unigram values found for word watt: [5.2e-06, 1.34e-05]
+multiple unigram values found for word c's: [3.23e-05, 2.61e-09]
+multiple unigram values found for word no's: [7.3e-06, 1.66e-12]
+saved clean unigram data at ../data/unigrams_clean.csv
